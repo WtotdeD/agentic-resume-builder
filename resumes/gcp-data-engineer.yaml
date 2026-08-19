@@ -1,0 +1,40 @@
+title: Data Engineer — Google Cloud
+tagline: BigQuery and Dataflow engineer who builds warehouses that survive late-arriving data.
+
+summary: |
+  Data engineer specialising in Google Cloud. Ran a 380 TB BigQuery estate and
+  140 Dataflow pipelines for a statistics bureau, rebuilding ingestion around
+  event time so that quarterly restatements fell from 22 to zero. Cut query
+  costs by 64% without dropping a single workload.
+
+experience:
+  expand:
+    - bureau-temporal-gcp
+    - hyperion-tech-lead
+  sections:
+    - Achievements
+    - Architecture
+    - Data Quality
+
+skills:
+  - Google Cloud
+  - Data Engineering
+  - Platform & Cloud
+
+showcases:
+  - chronosort
+  - digital-resume
+
+certifications: all
+
+projects: []
+
+sectionOrder:
+  - summary
+  - experience
+  - skills
+  - certifications
+  - education
+
+style:
+  accent: '#0f9d58'

@@ -1,0 +1,31 @@
+services:
+  digital-resume:
+    build:
+      context: .
+    image: digital-resume:latest
+    container_name: digital-resume
+    restart: unless-stopped
+    ports:
+      # Container port stays 3000 so the PDF route's self-callback URL always
+      # matches the listener; change only the host side.
+      - '${HOST_PORT:-3000}:3000'
+    environment:
+      NODE_ENV: production
+      PORT: '3000'
+    volumes:
+      # Editing a resume config or a content file takes effect on the next
+      # request — both routes render on demand. No rebuild needed.
+      - ./content:/app/content:ro
+      - ./resumes:/app/resumes:ro
+
+    # Chromium runs with --no-sandbox (it cannot use its own sandbox without
+    # relaxing Docker's seccomp filter, which would be a worse trade). These
+    # constraints are the compensating control.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      # Puppeteer writes its user-data-dir here; the rest of the fs is immutable.
+      - /tmp:rw,size=512m

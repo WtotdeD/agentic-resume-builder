@@ -1,0 +1,42 @@
+title: Founding Engineer — Data Products
+tagline: Built and sold a data company; still happiest shipping the first version alone.
+
+summary: |
+  Co-founded NarwhalNet and took it from nothing to £1.2M ARR in 29 months,
+  bootstrapped and profitable from month 14, through to acquisition. Wrote the
+  first version alone, made the first forty sales calls, and hired eleven
+  people — four of them into their first engineering job. Now leads platform
+  teams and still ships production code.
+
+experience:
+  expand:
+    - narwhalnet-cofounder
+    - hyperion-tech-lead
+  sections:
+    - Achievements
+    - Community
+    - Leadership & Mentoring
+
+skills:
+  - Platform & Cloud
+  - Data Engineering
+  - Leadership & Coaching
+
+showcases:
+  - digital-resume
+  - chronosort
+
+certifications: all
+
+projects: all
+
+sectionOrder:
+  - summary
+  - experience
+  - skills
+  - projects
+  - certifications
+  - education
+
+style:
+  accent: '#7c3aed'

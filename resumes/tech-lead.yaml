@@ -1,0 +1,42 @@
+title: Tech Lead — Data Platforms
+tagline: Hands-on technical leader who designs, builds, and grows teams around production data platforms.
+
+summary: |
+  Tech lead who takes full architecture ownership and still writes code.
+  Rebuilt Hyperion's tri-cloud cargo platform from first principles — one
+  source of truth across three planets at 41% of its former cost — and grew
+  the team from two contractors to six permanent engineers. Founded two
+  engineering communities that now run without him.
+
+experience:
+  expand:
+    - hyperion-tech-lead
+    - kraken-senior-data-engineer
+  sections:
+    - Achievements
+    - Leadership & Mentoring
+    - Architecture
+
+skills:
+  - Platform & Cloud
+  - Leadership & Coaching
+  - Data Engineering
+
+showcases:
+  - digital-resume
+  - krakenctl
+
+certifications: all
+
+projects: all
+
+sectionOrder:
+  - summary
+  - experience
+  - skills
+  - projects
+  - certifications
+  - education
+
+style:
+  accent: '#2563eb'

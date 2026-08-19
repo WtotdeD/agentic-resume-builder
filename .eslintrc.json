@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "no-unused-vars": "off"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "dist/",
+    "build/",
+    "coverage/",
+    "*.config.*",
+    "tests/"
+  ]
+}

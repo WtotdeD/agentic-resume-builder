@@ -1,0 +1,40 @@
+title: Data Engineer — AWS
+tagline: Redshift and Glue engineer who makes large estates cheaper without cutting workloads.
+
+summary: |
+  Data engineer specialising in AWS. Took a freight cooperative's runaway
+  Redshift and Glue estate, built per-job cost attribution, and cut monthly
+  spend by 47% while ingest volume doubled. Replaced nightly batch loads with
+  Kinesis streaming, taking ingest latency from six hours to nine minutes.
+
+experience:
+  expand:
+    - kraken-senior-data-engineer
+    - hyperion-tech-lead
+  sections:
+    - Achievements
+    - Architecture
+    - Cost & Efficiency
+
+skills:
+  - AWS
+  - Data Engineering
+  - DevOps & CI/CD
+
+showcases:
+  - krakenctl
+  - digital-resume
+
+certifications: all
+
+projects: []
+
+sectionOrder:
+  - summary
+  - experience
+  - skills
+  - certifications
+  - education
+
+style:
+  accent: '#ff9900'

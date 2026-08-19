@@ -1,0 +1,40 @@
+title: Data Engineer — Azure
+tagline: Databricks and Synapse engineer who turns decades of disagreeing records into one model.
+
+summary: |
+  Data engineer specialising in Azure. Migrated a four-decade-old family firm onto
+  Delta Lake and Synapse, reconciling four incompatible record systems into a
+  single lineage-tracked model and taking month-end close from nine days to four
+  hours. Built the medallion architecture and the metadata-driven ingestion
+  behind it.
+
+experience:
+  expand:
+    - fjord-azure-engineer
+    - hyperion-tech-lead
+  sections:
+    - Achievements
+    - Data Quality
+    - Architecture
+
+skills:
+  - Azure
+  - Data Engineering
+  - Platform & Cloud
+
+showcases:
+  - digital-resume
+
+certifications: all
+
+projects: []
+
+sectionOrder:
+  - summary
+  - experience
+  - skills
+  - certifications
+  - education
+
+style:
+  accent: '#0078d4'
