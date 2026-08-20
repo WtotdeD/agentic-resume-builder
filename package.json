@@ -4,6 +4,10 @@
   "private": true,
   "license": "MIT",
   "author": "Wouter van Dijk",
+  "packageManager": "pnpm@10.29.3",
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

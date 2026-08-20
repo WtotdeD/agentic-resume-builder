@@ -1,9 +1,9 @@
 services:
-  digital-resume:
+  agentic-resume-builder:
     build:
       context: .
-    image: digital-resume:latest
-    container_name: digital-resume
+    image: agentic-resume-builder:latest
+    container_name: agentic-resume-builder
     restart: unless-stopped
     ports:
       # Container port stays 3000 so the PDF route's self-callback URL always

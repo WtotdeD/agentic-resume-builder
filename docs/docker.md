@@ -1,10 +1,10 @@
-# Running digital-resume in Docker
+# Running agentic-resume-builder in Docker
 
 ## Quick start on a clean machine
 
 ```bash
-git clone <repo-url> digital-resume
-cd digital-resume
+git clone <repo-url> agentic-resume-builder
+cd agentic-resume-builder
 ./install.sh
 ```
 
@@ -59,9 +59,9 @@ docker compose up -d --build
 ## Everyday commands
 
 ```bash
-docker compose logs -f digital-resume   # follow logs
+docker compose logs -f agentic-resume-builder   # follow logs
 docker compose ps                       # health status
-docker compose restart digital-resume   # restart
+docker compose restart agentic-resume-builder   # restart
 docker compose down                     # stop and remove
 ```
 

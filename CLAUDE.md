@@ -1,4 +1,4 @@
-# digital-resume Development Guidelines
+# agentic-resume-builder Development Guidelines
 
 ## What this repo is
 

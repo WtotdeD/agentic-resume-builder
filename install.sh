@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# install.sh — bring digital-resume up on a clean machine.
+# install.sh — bring agentic-resume-builder up on a clean machine.
 #
 # Verifies (and optionally installs) Docker, builds the image, starts the
 # stack, then smoke-tests the viewer and the PDF export endpoint.
@@ -14,7 +14,7 @@
 set -euo pipefail
 
 readonly REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-readonly SERVICE="digital-resume"
+readonly SERVICE="agentic-resume-builder"
 readonly REQUIRED_PATHS=(Dockerfile docker-compose.yml package.json pnpm-lock.yaml content resumes public src)
 
 HOST_PORT="${HOST_PORT:-3000}"
@@ -177,7 +177,7 @@ smoke_test_pdf() {
 summary() {
   cat <<EOF
 
-${C_GRN}digital-resume is running.${C_OFF}
+${C_GRN}agentic-resume-builder is running.${C_OFF}
 
   Viewer      http://localhost:${HOST_PORT}/
   Render one  http://localhost:${HOST_PORT}/render/<config-name>
