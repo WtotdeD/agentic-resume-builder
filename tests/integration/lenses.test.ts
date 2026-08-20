@@ -30,6 +30,13 @@ const lensFiles = discoverLenses();
 describe('every lens in resumes/ assembles against the real content vault', () => {
   const vault: ContentVault = loadContentVault(contentDir);
 
+  // Without this, a renamed directory or a changed extension yields zero
+  // describe.each cases, and `passWithNoTests` reports green for a check that
+  // ran against nothing.
+  it('discovers at least one lens', () => {
+    expect(lensFiles.length).toBeGreaterThan(0);
+  });
+
   describe.each(lensFiles)('%s', (file) => {
     const name = path.basename(file, path.extname(file));
 

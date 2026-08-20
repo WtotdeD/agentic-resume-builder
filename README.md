@@ -10,14 +10,6 @@ version, an AWS version, a startup version — each selecting different entries 
 different sections from the same content. Render any of them in the browser or
 export an A4 PDF.
 
-<p align="center">
-  <img src="docs/images/resume-preview.png" alt="A rendered resume: header, summary, and an experience entry broken into Achievements, Architecture and Leadership sections" width="620">
-</p>
-
-> **The profile in this repo is fictional.** Dr. Ignatius Featherstone-Bloom does
-> not exist, has not been to Mars, and the narwhals are not real. It is demo data
-> so the app has something to render. Replace `content/` with your own.
-
 ## Which are you here for?
 
 **I want my own resume.** Fork the repo, run it, and replace `content/` with your
@@ -29,6 +21,14 @@ how the pieces fit and [`CONTRIBUTING.md`](CONTRIBUTING.md) for setup and the
 pull request rules. The one thing worth knowing up front is that a lens
 references content by exact string, and one of those two references fails
 silently.
+
+<p align="center">
+  <img src="docs/images/resume-preview.png" alt="A rendered resume: header, summary, and an experience entry broken into Achievements, Architecture and Leadership sections" width="620">
+</p>
+
+> **The profile in this repo is fictional.** Dr. Ignatius Featherstone-Bloom does
+> not exist, has not been to Mars, and the narwhals are not real. It is demo data
+> so the app has something to render. Replace `content/` with your own.
 
 ## How it works
 

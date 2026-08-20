@@ -38,8 +38,9 @@ is a valid pull request.
 
 - The template renders at A4. Section-level blocks carry `break-inside: avoid`
   so a section is not split across a page boundary.
-- Styling is Tailwind utilities. Print-only behaviour uses the `print:` variant;
-  screen-only elements use `no-print`.
+- Styling is Tailwind utilities. Print behaviour is not a Tailwind variant: it
+  lives in the `@media print` block in `src/styles/globals.css`. Screen-only
+  elements get the `no-print` class, which that block hides.
 - Fonts are self-hosted `.woff2` in `public/fonts/`. No font CDN — it works in
   your browser and fails in headless Chromium.
 - If you change the PDF pipeline, export a PDF and compare it against the screen

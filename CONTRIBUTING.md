@@ -31,7 +31,7 @@ ships a known-good Chromium:
 docker compose up -d --build
 ```
 
-`docs/docker.md` covers ports, volumes and troubleshooting.
+[`docs/docker.md`](docs/docker.md) covers ports, volumes and troubleshooting.
 
 ## The loop
 
@@ -51,7 +51,7 @@ export against the running container.
 **A green `pnpm validate` does not mean your resume renders what you intended.**
 A `sections:` heading that matches nothing produces no error and no warning. If
 you touched `content/` or `resumes/`, open `/render/<lens>` and confirm the
-sections you expect are on the page. `ARCHITECTURE.md` explains why this coupling
+sections you expect are on the page. [`ARCHITECTURE.md`](ARCHITECTURE.md) explains why this coupling
 behaves the way it does.
 
 ## Tests
@@ -77,12 +77,12 @@ pnpm test:watch    # while working
 3. Commit messages: short imperative first line, body explaining _why_. The
    diff already shows _what_.
 4. Fill in the PR template. The checklist is the same one in
-   `CODE_STANDARDS.md`.
+   [`CODE_STANDARDS.md`](CODE_STANDARDS.md).
 5. Say how you verified it. Paste the passing test, the build line, or what you
    saw on the page. "Should work" is not verification.
 
-`CODE_STANDARDS.md` is the full set of rules a PR is judged against.
-`ARCHITECTURE.md` explains how the pieces fit, and is worth ten minutes before a
+[`CODE_STANDARDS.md`](CODE_STANDARDS.md) is the full set of rules a PR is judged against.
+[`ARCHITECTURE.md`](ARCHITECTURE.md) explains how the pieces fit, and is worth ten minutes before a
 first change.
 
 ## Adding content

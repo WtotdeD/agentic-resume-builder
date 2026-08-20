@@ -27,6 +27,10 @@ async function launchBrowser(): Promise<Browser> {
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-gpu',
+      // Under Docker's default AppArmor profile the crashpad handler fails to
+      // start and takes the whole launch with it. A resume renderer has no use
+      // for crash telemetry.
+      '--disable-crash-reporter',
     ],
   });
 
