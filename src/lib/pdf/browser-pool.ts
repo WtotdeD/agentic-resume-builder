@@ -27,10 +27,14 @@ async function launchBrowser(): Promise<Browser> {
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-gpu',
-      // Under Docker's default AppArmor profile the crashpad handler fails to
-      // start and takes the whole launch with it. A resume renderer has no use
-      // for crash telemetry.
-      '--disable-crash-reporter',
+      // Both exist for the same reason: under Docker's default AppArmor profile
+      // Chromium is killed by a signal before it reports a DevTools endpoint.
+      // A host without AppArmor never sees it, so it reproduces only in CI.
+      // The crash handler is no loss to a resume renderer; the zygote is the
+      // suspected trigger, since it forks through namespace calls the profile
+      // refuses.
+      '--disable-breakpad',
+      '--no-zygote',
     ],
   });
 

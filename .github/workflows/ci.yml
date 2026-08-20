@@ -57,6 +57,35 @@ jobs:
           docker compose logs --no-color
           exit 1
 
+      # Temporary: the smoke test caught a Chromium launch failure that does not
+      # reproduce on a host without AppArmor. This probes three flag sets inside
+      # the container so one run identifies which survives. Remove once fixed.
+      - name: Probe Chromium launch inside the container
+        run: |
+          set +e
+          probe() {
+            echo "--- $1 ---"
+            shift
+            docker compose exec -T agentic-resume-builder /usr/bin/chromium \
+              --headless --no-sandbox --disable-setuid-sandbox \
+              --disable-dev-shm-usage --disable-gpu "$@" \
+              --dump-dom about:blank > out.txt 2> err.txt
+            code=$?
+            if [ "$code" -gt 128 ]; then
+              echo "exit $code (killed by signal $((code - 128)))"
+            else
+              echo "exit $code"
+            fi
+            echo "stdout: $(head -c 120 out.txt)"
+            echo "stderr:"; head -20 err.txt
+          }
+          probe "baseline (current production flags minus the two new ones)"
+          probe "with --disable-breakpad" --disable-breakpad
+          probe "with --disable-breakpad --no-zygote" --disable-breakpad --no-zygote
+          echo "--- kernel / security context ---"
+          docker inspect -f 'AppArmor={{.AppArmorProfile}} Seccomp={{.HostConfig.SecurityOpt}}' agentic-resume-builder
+          uname -r
+
       - name: Smoke-test the render route and the PDF export
         run: |
           set -euo pipefail
