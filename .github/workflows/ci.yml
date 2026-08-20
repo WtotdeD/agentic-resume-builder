@@ -87,6 +87,19 @@ jobs:
               }
             })();
           '
+          echo "--- same launch, HOME forced to a writable path ---"
+          docker compose exec -T -e HOME=/tmp agentic-resume-builder node -e '
+            const puppeteer = require("puppeteer");
+            (async () => {
+              try {
+                const b = await puppeteer.launch({ headless: true, args: ["--no-sandbox","--disable-setuid-sandbox","--disable-dev-shm-usage","--disable-gpu"] });
+                await b.close();
+                console.log("HOME=/tmp baseline: OK");
+              } catch (e) {
+                console.log("HOME=/tmp baseline: FAIL -> " + String(e.message).split("\n").slice(0, 4).join(" | "));
+              }
+            })();
+          '
           echo "--- security context ---"
           docker inspect -f 'AppArmor={{.AppArmorProfile}} Seccomp={{.HostConfig.SecurityOpt}} ReadonlyRootfs={{.HostConfig.ReadonlyRootfs}}' agentic-resume-builder
           docker compose exec -T agentic-resume-builder sh -c 'echo TMPDIR=${TMPDIR:-unset}; echo HOME=$HOME; df -h /tmp | tail -1'

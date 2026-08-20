@@ -29,3 +29,8 @@ services:
     tmpfs:
       # Puppeteer writes its user-data-dir here; the rest of the fs is immutable.
       - /tmp:rw,size=512m
+      # Chromium derives its crashpad database path from HOME. On a read-only
+      # rootfs that path is unwritable, so it hands the crash handler an empty
+      # --database and dies on the handler's complaint. Only hosts that apply an
+      # AppArmor profile hit it, which is why it surfaced in CI and not locally.
+      - /home/node:rw,size=16m,uid=1000,gid=1000,mode=0700
