@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a change to the engine.
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project keeps its dependency list and its feature surface small on
+        purpose. A proposal is much likelier to land if it describes a problem
+        you actually hit rather than a capability that might be useful later.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What were you trying to do, and where did the current design get in the way?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you propose
+      description: The change itself. Describe the behaviour, not the implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead
+      description: Whether an existing lens, section or content structure got you close, and where it fell short.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This needs a new dependency
+        - label: This changes the shape of `content/` or `resumes/` files
+        - label: I am willing to open the pull request

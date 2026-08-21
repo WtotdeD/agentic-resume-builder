@@ -1,0 +1,66 @@
+name: Bug report
+description: Something renders, exports, or builds differently than it should.
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing: if a section is missing from a rendered resume, check
+        that the heading in the lens's `sections:` list matches the `##`
+        heading in the entry exactly — case, spacing and `&` included. That
+        mismatch fails silently by design and is the most common surprise.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: The steps, starting from a fresh clone if you can.
+      placeholder: |
+        1. ...
+        2. Open /render/...
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: how-run
+    attributes:
+      label: How are you running it
+      options:
+        - Docker (./install.sh or docker compose)
+        - Local (pnpm dev)
+        - Local production build (pnpm build && pnpm start)
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Node and pnpm versions
+      description: Output of `node -v` and `pnpm -v`. Skip if running in Docker.
+      placeholder: v22.11.0 / 10.29.3
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: |
+        Server output, browser console, or the error box on the page. Redact any
+        tokens, keys or environment values before pasting — this issue is public.
+      render: shell
+
+  - type: checkboxes
+    id: content
+    attributes:
+      label: Content
+      options:
+        - label: This reproduces with the demo content shipped in the repo
+        - label: This only happens with my own content in `content/`

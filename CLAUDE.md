@@ -1,4 +1,4 @@
-# digital-resume Development Guidelines
+# agentic-resume-builder Development Guidelines
 
 ## What this repo is
 
@@ -63,7 +63,3 @@ a config's `sections:` list.
   to an entry must also be added to `content/skills.md` by hand.
 - Dates are `YYYY-MM`. `showcases.md` `repo:` values and the LinkedIn/GitHub
   settings must be valid URLs; `email` must be a valid email address.
-
-## Constitution
-
-See `.specify/memory/constitution.md` for non-negotiable principles.

@@ -57,7 +57,6 @@ Thumbs.db
 
 # test results
 /test-results/
-/playwright-report/
 
 # Workflow tree — not part of this project.
 specs/
