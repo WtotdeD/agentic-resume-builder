@@ -42,3 +42,18 @@ Command-line control plane for Redshift and Glue estates, with cost guardrails b
 - One command to promote a pipeline from staging to production
 - Refuses any plan whose projected monthly spend exceeds its declared budget
 - Config-driven — adding a new pipeline is a YAML entry, not a code change
+
+## Ledgerlint
+
+id: ledgerlint
+repo: https://github.com/quantum-narwhal-labs/ledgerlint
+technologies: Python, dbt, GitHub Actions
+related_experience: meridian-principal-engineer
+
+Data contract checker that fails a pull request when a schema change would break a downstream consumer, rather than letting the consumer find out in production.
+
+### Highlights
+
+- Shift left — the break surfaces in the CI of whoever caused it, while they still remember why
+- Producer-owned — contracts live beside the code that emits the data, not in a separate registry nobody updates
+- Boring by design — no runtime agent, no service to operate; it is a check that exits non-zero

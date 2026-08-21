@@ -42,6 +42,36 @@ After determining the content type, check whether an entry already exists:
 
 **If no existing content is found:** proceed to Phase 1 as normal.
 
+## Phase 0c: Read the lenses before you interview
+
+**Do this for every experience interview, new or extend.** It is what turns one
+job into several resumes.
+
+Read every file in `resumes/` and build a table of lens name against its
+`experience.sections` list. Do not work from a remembered list of profiles —
+lenses are added and renamed, and a hardcoded list goes stale silently.
+
+```
+lens                     sections it selects
+tech-lead                Achievements, Leadership & Mentoring, Architecture
+aws-data-engineer        Achievements, Architecture, Cost & Efficiency
+...
+```
+
+Two things come out of this table:
+
+- **The union of all `sections:` values** is the set of angles worth asking
+  about. A section no lens selects renders nowhere, so there is no point
+  collecting it. A section several lenses want is worth pushing hardest on.
+- **Which lenses are hungry.** A lens whose sections are unsupported by any
+  entry it expands renders a thin resume, and nothing warns anyone.
+
+One role legitimately serves every lens. In this vault `hyperion-tech-lead` is
+expanded by all five: the AWS lens takes its Architecture and Cost & Efficiency,
+the tech-lead lens takes its Leadership & Mentoring, the GCP lens takes its Data
+Quality. Same job, same file, different faces. That only works because the
+interview collected all of those angles — so collect them.
+
 ## Phase 1: Interview
 
 Ask questions **in rounds of 3-5**, not all at once and not one at a time. Wait for answers before the next round. Tailor questions to the content type.
@@ -65,11 +95,30 @@ The goal is to extract concrete, specific, quantifiable content — not generic 
 - What would have happened if you hadn't done this?
 - Anything you're proud of that doesn't fit neatly into a metric?
 
-**Round 4 — Leadership, mentoring & community:**
-- Did you teach, mentor, or coach anyone? Formally or informally? How many people?
-- Did you bridge teams, departments, or skill gaps? What did that look like?
-- Any community contributions — talks, publications, crowdfunding, open source, events?
-- Skip this round if the role was purely individual contributor with no mentoring/community angle.
+**Round 4 — One pass per angle the lenses actually want:**
+
+Work through the section union from Phase 0c. For each angle not already covered
+by earlier answers, ask directly. The point is that a single role usually has
+material for most of them, and the user will not volunteer it unasked — they
+describe their job the way they think about it, not the way five audiences do.
+
+- **Architecture** — what did you design, and what shape did the system end up?
+  What decision would you defend in an interview?
+- **Leadership & Mentoring** — did you teach, coach or mentor anyone, formally or
+  otherwise? How many people, and what changed for them? Did you bridge teams or
+  skill gaps?
+- **Cost & Efficiency** — did anything get cheaper, faster, or need less
+  operational effort? By how much?
+- **Data Quality** — did correctness, freshness, or trust in the data improve?
+  What was breaking before?
+- **Community** — talks, publications, open source, events, internal guilds?
+  A package you released counts, and so does one nobody starred.
+
+Ask about an angle even when it seems unlikely. "No, nothing there" is a fast
+answer and a cheap question; the expensive outcome is a lens that renders thin
+because nobody thought to ask.
+
+Skip an angle only when no lens selects it.
 
 **Optional Round 5 — if the answers are rich enough to warrant it:**
 - Anything that makes this role unusual or memorable?
@@ -81,11 +130,16 @@ When extending an existing entry, skip context questions (company, title, dates,
 
 **Round 1 — Gap analysis (present, don't ask):**
 - Review which `##` sections exist and which are thin or missing
-- Check which profile angles (tech lead, GCP, AWS, Azure, startup) lack supporting content in this entry
+- Using the lens table from Phase 0c, check which lenses expand this entry and which of their sections it does not supply
 - Tell the user: "Your {company} entry has strong {sections}, but I see gaps in {missing areas}. Let's fill those."
 
 **Round 2 — Targeted questions (based on gaps):**
-- For missing sections: ask directly about that angle. E.g., if no `## GCP & Cross-Cloud` section exists: "Did this role involve any GCP or cross-cloud integration work?"
+- For missing sections: ask directly about that angle, naming a heading from the
+  fixed vocabulary. E.g. if the entry has no `## Data Quality` and two lenses
+  select that section: "Both the GCP and Azure resumes want a Data Quality angle
+  on this role — did correctness or freshness improve while you were there?"
+  Never invent a heading such as `## GCP & Cross-Cloud`; a heading outside the
+  vocabulary renders nowhere and says nothing about it.
 - For thin sections (1 bullet): "You have {N} bullet under {section}. Any more outcomes we should capture?"
 - For over-populated sections (>3 Achievements, >2 other): flag them for trimming: "Your {section} has {N} bullets — the target is {max}. Want to trim to the strongest?"
 - For profile angles: "For the {profile} resume, it would help to have content about {specific area}. Can you tell me about that?"
@@ -253,11 +307,36 @@ category or ask the user which category it belongs in.
 - If a `.nl.md` counterpart exists, remind the user: "Don't forget to update the Dutch version at `{nl file path}` with the new content."
 
 After saving, tell the user:
+
 - Where the file was saved (or edited)
 - For new experience: it is written with `draft: false`, so it appears in any
   resume config that expands or lists it
-- Which resume configs they might want to update to include the new content
-- For extend mode: which new `##` sections were added, so they can add them to config `experience.sections` if needed
+
+Then close the loop against the lens table from Phase 0c, because an entry
+nothing expands is an entry nobody reads. For each lens, say plainly which of the
+sections just written it would select, and therefore whether the new id belongs
+in its `expand:` list:
+
+> `tech-lead` selects Achievements, Leadership & Mentoring, Architecture — this
+> entry has all three. Add `{id}` to its `expand:` list.
+> `gcp-data-engineer` selects Data Quality, which this entry does not have.
+> Expanding it there would render the role with an Achievements section only.
+
+Offer to make those edits. Then, and this matters more than anything else in this
+skill:
+
+> Open `/render/{lens}` for each config you changed and confirm the sections are
+> actually on the page.
+
+A `sections:` heading that matches nothing produces no error, no warning and no
+log line. `pnpm validate` passes. The integration test in
+`tests/integration/lenses.test.ts` cannot catch it either — it only checks that a
+heading an expanded entry *provides* survives assembly, so a heading that matches
+nothing anywhere is invisible to it by construction. Looking at the page is the
+only verification that exists.
+
+For extend mode: name the new `##` sections explicitly, so the user can add them
+to the `experience.sections` of any lens that should show them.
 
 ## Rules
 

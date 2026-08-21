@@ -4,6 +4,7 @@ company: Hyperion Orbital Logistics
 title: Tech Lead — Data Platform
 location: Lower Puddlemere, Improbability Shire
 start: 2023-03
+end: 2024-05
 draft: false
 technologies:
   - Databricks
@@ -16,9 +17,9 @@ technologies:
   - Google Cloud
 ---
 
-Joined as the first internal tech lead for a platform that tracked cargo across three planets and could not reliably say how much of it existed. Went back to first principles and rebuilt around one idea: the manifest data drives everything, and anything the manifest cannot explain does not ship. The platform is now the **single source of truth for every Hyperion payload**, at **41% of its former running cost**, and has not lost a crate since.
+Joined as the first internal tech lead for a platform that tracked cargo across three planets and could not reliably say how much of it existed. Went back to first principles and rebuilt around one idea: the manifest data drives everything, and anything the manifest cannot explain does not ship. The platform became the **single source of truth for every Hyperion payload**, at **41% of its former running cost**, and has not lost a crate since.
 
-Owns the architecture across all three clouds, still writes production code, and grew the team from two contractors to six permanent engineers.
+Owned the architecture across all three clouds, still wrote production code, and grew the team from two contractors to six permanent engineers.
 
 ## Achievements
 

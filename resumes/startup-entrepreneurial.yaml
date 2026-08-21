@@ -10,6 +10,7 @@ summary: |
 
 experience:
   expand:
+    - meridian-principal-engineer
     - narwhalnet-cofounder
     - hyperion-tech-lead
   sections:
@@ -23,6 +24,7 @@ skills:
   - Leadership & Coaching
 
 showcases:
+  - ledgerlint
   - digital-resume
   - chronosort
 
