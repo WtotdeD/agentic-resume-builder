@@ -95,3 +95,10 @@ and writes a correctly formatted entry into `content/`. Or copy an existing file
 
 Use the issue templates. If a section is missing from a rendered resume, check
 the exact-string match first — it is almost always that.
+
+**Security issues do not go in an issue tracker.** See
+[`SECURITY.md`](SECURITY.md) for the private channel.
+
+## Code of Conduct
+
+Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).

@@ -147,6 +147,10 @@ render time.
 
 Bug reports, fixes and small features are welcome — see
 [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_STANDARDS.md`](CODE_STANDARDS.md).
+Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+Found a security issue? Do not open an issue — see
+[`SECURITY.md`](SECURITY.md).
 
 ## Licence
 

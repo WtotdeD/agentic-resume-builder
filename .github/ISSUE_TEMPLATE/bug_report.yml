@@ -52,7 +52,9 @@ body:
     id: logs
     attributes:
       label: Logs or error output
-      description: Server output, browser console, or the error box on the page.
+      description: |
+        Server output, browser console, or the error box on the page. Redact any
+        tokens, keys or environment values before pasting — this issue is public.
       render: shell
 
   - type: checkboxes

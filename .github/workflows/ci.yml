@@ -6,6 +6,11 @@ on:
   push:
     branches: [main]
 
+# The repo default is already read-only; stating it here means a future step
+# that reaches for GITHUB_TOKEN cannot silently inherit more.
+permissions:
+  contents: read
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -19,11 +24,11 @@ jobs:
       # nothing here. The docker job below exercises the real browser.
       PUPPETEER_SKIP_DOWNLOAD: 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           # Matches the Dockerfile's node:22-bookworm-slim base.
           node-version: 22
@@ -37,7 +42,7 @@ jobs:
     name: Docker build and smoke test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # Builds and starts through compose rather than plain docker run, so CI
       # exercises the same path install.sh and docs/docker.md document.
