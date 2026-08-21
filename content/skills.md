@@ -20,7 +20,7 @@ BigQuery, Dataflow, Pub/Sub, Dataproc, Cloud Composer, Looker
 
 ## Databases & BI
 
-PostgreSQL, SQL Server, SSIS, SSAS, Power BI, Excel, VBA
+PostgreSQL, SQL Server, Snowflake, SSIS, SSAS, Power BI, Excel, VBA
 
 ## Application
 
