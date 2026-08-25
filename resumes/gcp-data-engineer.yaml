@@ -5,7 +5,9 @@ summary: |
   Data engineer specialising in Google Cloud. Ran a 380 TB BigQuery estate and
   140 Dataflow pipelines for a statistics bureau, rebuilding ingestion around
   event time so that quarterly restatements fell from 22 to zero. Cut query
-  costs by 64% without dropping a single workload.
+  costs by 64% without dropping a single workload. Now publishes freshness as a
+  stated promise rather than a support question, across a forty-member data
+  cooperative.
 
 experience:
   expand:

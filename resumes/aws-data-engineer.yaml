@@ -5,7 +5,9 @@ summary: |
   Data engineer specialising in AWS. Took a freight cooperative's runaway
   Redshift and Glue estate, built per-job cost attribution, and cut monthly
   spend by 47% while ingest volume doubled. Replaced nightly batch loads with
-  Kinesis streaming, taking ingest latency from six hours to nine minutes.
+  Kinesis streaming, taking ingest latency from six hours to nine minutes. Now
+  sets platform direction across three clouds, where enforced data contracts
+  held warehouse spend flat through a 4x increase in volume.
 
 experience:
   expand:

@@ -109,7 +109,8 @@ style:
 ```
 
 Entries not listed in `expand:` still appear, rendered compactly as a title, dates
-and narrative. That is how a twelve-year career fits on two pages.
+and narrative. That is how a long career stays readable: the roles this audience
+cares about get their full detail, the rest are present but take a line or two.
 
 **The two references behave differently when they are wrong.** An `expand:` id
 that matches no entry throws, and the page shows a visible render error. A
