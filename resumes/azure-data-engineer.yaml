@@ -6,7 +6,8 @@ summary: |
   Delta Lake and Synapse, reconciling four incompatible record systems into a
   single lineage-tracked model and taking month-end close from nine days to four
   hours. Built the medallion architecture and the metadata-driven ingestion
-  behind it.
+  behind it. Currently makes correctness enforceable rather than hoped for,
+  turning schema breaks from a monthly surprise into a rejected pull request.
 
 experience:
   expand:
